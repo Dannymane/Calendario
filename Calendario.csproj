@@ -7,4 +7,12 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Images\calendar_grid.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\calendar_grid.jpg" />
+  </ItemGroup>
+
 </Project>
