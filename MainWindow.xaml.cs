@@ -23,6 +23,19 @@ namespace Calendario
         public MainWindow()
         {
             InitializeComponent();
+            plnMainGrid.MouseDown += new MouseButtonEventHandler(plnMainGrid_MouseDown);
+        }
+
+
+        private void plnMainGrid_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("You clicked me at " + e.GetPosition(this).ToString());
+            
+        }
+
+        private void plnMainGrid_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("at " + e.GetPosition(this).ToString());
         }
     }
 }
