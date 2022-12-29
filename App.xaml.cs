@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Input;
 
 namespace Calendario
 {
@@ -13,5 +14,12 @@ namespace Calendario
     /// </summary>
     public partial class App : Application
     {
+        //for all exceptions, in xaml: DispatcherUnhandledException="Application_DispatcherUnhandledException" at the head
+        private void Application_DispatcherUnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)
+        {
+            MessageBox.Show("An unhandled exception just occurred: " + e.Exception.Message, "Exception Sample", MessageBoxButton.OK, MessageBoxImage.Error);
+            e.Handled = true;
+        }
     }
+
 }
