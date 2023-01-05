@@ -1,6 +1,7 @@
 ﻿using Calendario.Images;
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,10 +22,12 @@ namespace Calendario
     /// </summary>
     public partial class MainWindow : Window
     {
+        public ObservableCollection<Event> Events { get; set; }
         public MainWindow()
         {
             InitializeComponent();
             plnMainGrid.MouseDown += new MouseButtonEventHandler(plnMainGrid_MouseDown);//
+            Events = new ObservableCollection<Event>();
             //Calendar.SelectedDatesChanged += Calendar_SelectedDatesChanged;
         }
 
