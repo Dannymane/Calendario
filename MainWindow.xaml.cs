@@ -25,10 +25,28 @@ namespace Calendario
         {
             InitializeComponent();
             plnMainGrid.MouseDown += new MouseButtonEventHandler(plnMainGrid_MouseDown);//
+            //Calendar.SelectedDatesChanged += Calendar_SelectedDatesChanged;
         }
 
+  //      private void Calendar_SelectedDatesChanged(object sender, SelectionChangedEventArgs e)
+        //{
+        //    // Clear the appointments list
+        //    AppointmentsDataGrid.Items.Clear();
 
-        private void plnMainGrid_MouseUp(object sender, MouseButtonEventArgs e)
+        //    // Get the selected week
+        //    Calendar calendar = sender as Calendar;
+        //    DateTime startOfWeek = calendar.SelectedDates[0];
+        //    DateTime endOfWeek = startOfWeek.AddDays(7);
+
+        //    // Add the appointments for the selected week to the list
+        //    foreach (Appointment appointment in Appointments)
+        //    {
+        //        if (appointment.StartTime >= startOfWeek && appointment.EndTime < endOfWeek)
+        //        {
+        //            AppointmentsDataGrid.Items.Add(appointment);
+        //        }
+        //    }
+   //     }
         private void plnMainGrid_MouseUp(object sender, MouseButtonEventArgs e)//
         {
             MessageBox.Show("You clicked me at " + e.GetPosition(this).ToString());
