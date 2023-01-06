@@ -31,6 +31,7 @@ namespace Calendario.UserControls
         public TimePicker()
         {
             InitializeComponent();
+            UpdateTimeText();
         }
         private void UpdateTimeText()
         {
