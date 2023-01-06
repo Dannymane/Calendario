@@ -1,5 +1,5 @@
 ﻿using Calendario.Images;
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -22,43 +22,54 @@ namespace Calendario
     /// </summary>
     public partial class MainWindow : Window
     {
+        private Calendar calendar;
         public ObservableCollection<Event> Events { get; set; }
         public MainWindow()
         {
             InitializeComponent();
-            plnMainGrid.MouseDown += new MouseButtonEventHandler(plnMainGrid_MouseDown);//
             Events = new ObservableCollection<Event>();
             //Calendar.SelectedDatesChanged += Calendar_SelectedDatesChanged;
         }
 
-  //      private void Calendar_SelectedDatesChanged(object sender, SelectionChangedEventArgs e)
+        //private void Calendar_SelectedDatesChanged(object sender, SelectionChangedEventArgs e)
         //{
-        //    // Clear the appointments list
-        //    AppointmentsDataGrid.Items.Clear();
+        //    // Clear the events list
+        //    // EventsDataGrid.Items.Clear();
 
         //    // Get the selected week
         //    Calendar calendar = sender as Calendar;
         //    DateTime startOfWeek = calendar.SelectedDates[0];
         //    DateTime endOfWeek = startOfWeek.AddDays(7);
 
-        //    // Add the appointments for the selected week to the list
-        //    foreach (Appointment appointment in Appointments)
-        //    {
-        //        if (appointment.StartTime >= startOfWeek && appointment.EndTime < endOfWeek)
-        //        {
-        //            AppointmentsDataGrid.Items.Add(appointment);
-        //        }
-        //    }
-   //     }
-        private void plnMainGrid_MouseUp(object sender, MouseButtonEventArgs e)//
-        {
-            MessageBox.Show("You clicked me at " + e.GetPosition(this).ToString());
-            
-        }
+        //    // Add the events for the selected week to the list
+        //    //foreach (Event e in Events)
+        //    //{
+        //    //    if (e.StartTime >= startOfWeek && e.EndTime < endOfWeek)
+        //    //    {
+        //    //        EventsDataGrid.Items.Add(e);
+        //    //    }
+        //    //}
+        //}
 
-        private void plnMainGrid_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            MessageBox.Show("at " + e.GetPosition(this).ToString());
-        }
+        //private void AddEventButton_Click(object sender, RoutedEventArgs e)
+        //{
+        //    // Display a dialog to add a new event
+        //    AddEventWindow addEventWindow = new AddEventWindow();
+        //    addEventWindow.ShowDialog();
+
+        //    // If the user clicks "OK" in the dialog, add the event to the list
+        //    if (addEventWindow.DialogResult.HasValue && addEventWindow.DialogResult.Value)
+        //    {
+        //        Event event = add EventWindow. Event;
+        //Events.Add(event);
+
+        // If the event is in the currently selected week, add it to the list
+        //DateTime startOfWeek = calendar.SelectedDates[0];
+        //DateTime endOfWeek = startOfWeek.AddDays(7);
+        //if (event.StartTime >= startOfWeek && event.EndTime < endOfWeek)
+        //{
+        //     EventsDataGrid.Items.Add(event);
+        //}
+        //}
     }
 }
