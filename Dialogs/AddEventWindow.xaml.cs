@@ -42,22 +42,25 @@ namespace Calendario.Dialogs
                 MessageBox.Show("Please select a day for the event.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
-            //if (DayPicker.SelectedDate == null || EndTimeDatePicker.SelectedDate == null)
+            //if (StartTimePicker.SelectedDate == null || EndTimePicker.SelectedDate == null)
             //{
             //    MessageBox.Show("Please select a start time and end time for the event.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             //    return;
             //}
-            //if (StartTimeDatePicker.SelectedDate.Value >= EndTimeDatePicker.SelectedDate.Value)
-            //{
-            //    MessageBox.Show("The end time must be after the start time.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-            //    return;
-            //}
+            if (StartTimePicker.Time >= EndTimePicker.Time)
+            {
+                MessageBox.Show("The end time must be after the start time.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
 
-            //// Set the properties of the event
-            //Event.Title = TitleTextBox.Text;
-            //Event.StartTime = StartTimeDatePicker.SelectedDate.Value;
-            //Event.EndTime = EndTimeDatePicker.SelectedDate.Value;
-            //Event.Location = LocationTextBox.Text;
+            // Set the properties of the event
+            Event.Title = TitleTextBox.Text;
+            Event.Day = DayPicker.SelectedDate.Value;
+            Event.StartTime = StartTimePicker.Time;
+            Event.EndTime = EndTimePicker.Time;
+            Event.Location = LocationTextBox.Text;
+            Event.Description = DescriptionTextBox.Text;
+
 
             // Close the dialog
             DialogResult = true;
