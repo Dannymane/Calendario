@@ -15,4 +15,8 @@
     <Resource Include="Images\calendar_grid.jpg" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Dialogs\" />
+  </ItemGroup>
+
 </Project>
