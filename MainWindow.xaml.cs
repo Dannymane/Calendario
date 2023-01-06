@@ -28,48 +28,47 @@ namespace Calendario
         {
             InitializeComponent();
             Events = new ObservableCollection<Event>();
-            //Calendar.SelectedDatesChanged += Calendar_SelectedDatesChanged;
+            Calendar.SelectedDatesChanged += Calendar_SelectedDatesChanged;
         }
 
-        //private void Calendar_SelectedDatesChanged(object sender, SelectionChangedEventArgs e)
-        //{
-        //    // Clear the events list
-        //    // EventsDataGrid.Items.Clear();
+        private void Calendar_SelectedDatesChanged(object sender, SelectionChangedEventArgs e)
+        {
+            // Clear the events list
+            //EventsDataDockPanel.Items.Clear();
 
-        //    // Get the selected week
-        //    Calendar calendar = sender as Calendar;
-        //    DateTime startOfWeek = calendar.SelectedDates[0];
-        //    DateTime endOfWeek = startOfWeek.AddDays(7);
+            // Get the selected week
+            Calendar calendar = sender as Calendar;
+            DateTime startOfWeek = calendar.SelectedDates[0];
+            DateTime endOfWeek = startOfWeek.AddDays(7);
 
-        //    // Add the events for the selected week to the list
-        //    //foreach (Event e in Events)
-        //    //{
-        //    //    if (e.StartTime >= startOfWeek && e.EndTime < endOfWeek)
-        //    //    {
-        //    //        EventsDataGrid.Items.Add(e);
-        //    //    }
-        //    //}
-        //}
+            // Add the events for the selected week to the list
+            //foreach (Event e in Events)
+            //{
+            //    if (e.StartTime >= startOfWeek && e.EndTime < endOfWeek)
+            //    {
+            //        EventsDataGrid.Items.Add(e);
+            //    }
+            //}
+        }
 
-        //private void AddEventButton_Click(object sender, RoutedEventArgs e)
-        //{
-        //    // Display a dialog to add a new event
-        //    AddEventWindow addEventWindow = new AddEventWindow();
-        //    addEventWindow.ShowDialog();
+        // private void AddEventButton_Click(object sender, RoutedEventArgs e)
+        // {
+        //     // Display a dialog to add a new event
+        //     AddEventWindow addEventWindow = new AddEventWindow();
+        //     addEventWindow.ShowDialog();
 
-        //    // If the user clicks "OK" in the dialog, add the event to the list
-        //    if (addEventWindow.DialogResult.HasValue && addEventWindow.DialogResult.Value)
-        //    {
-        //        Event event = add EventWindow. Event;
-        //Events.Add(event);
+        //     // If the user clicks "OK" in the dialog, add the event to the list
+        //     if (addEventWindow.DialogResult.HasValue && addEventWindow.DialogResult.Value)
+        //     {
+        //         Event event = add EventWindow. Event;
+        // Events.Add(event);
 
         // If the event is in the currently selected week, add it to the list
-        //DateTime startOfWeek = calendar.SelectedDates[0];
-        //DateTime endOfWeek = startOfWeek.AddDays(7);
-        //if (event.StartTime >= startOfWeek && event.EndTime < endOfWeek)
-        //{
+        //DateTime startOfWeek = calendar.SelectedDates [0];
+        // DateTime endOfWeek = startOfWeek.AddDays(7);
+        // if (event.StartTime >= startOfWeek && event.EndTime < endOfWeek)
+        // {
         //     EventsDataGrid.Items.Add(event);
-        //}
-        //}
+        // }
     }
 }
