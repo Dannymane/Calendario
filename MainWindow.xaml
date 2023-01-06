@@ -6,8 +6,11 @@
         xmlns:local="clr-namespace:Calendario"
         mc:Ignorable="d"
         Title="MainWindow" Height="720" MinHeight="300" MinWidth="1150">
-    <Canvas  Name="plnMainGrid" MouseUp="plnMainGrid_MouseUp" Background="#FF3C443C">
+
+    <Canvas  Name="plnMainGrid" Background="#FF3C443C">
         <Calendar x:Name="Calendar" Canvas.Left="30" Canvas.Top="40" />
+        <!--<Button x:Name="AddEventButton" Canvas.Left="60" Canvas.Top="250" Content="Add Event"
+                Click="AddEventButton_Click" />-->
         <DockPanel Canvas.Left="240" Canvas.Top="40" Height="663" MaxWidth="910" Panel.ZIndex="5" HorizontalAlignment="Left" VerticalAlignment="Center">
             <!--<StackPanel DockPanel.Dock="Left">
                 <Button Content="Button 1"/>
