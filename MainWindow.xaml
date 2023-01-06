@@ -42,18 +42,13 @@
             </Canvas>
 
             <ScrollViewer>
-                <DockPanel Height="794" Width="880" HorizontalAlignment="Left" VerticalAlignment="Center">
+                <DockPanel x:Name="EventsDataDockPanel"  Height="794" Width="880" HorizontalAlignment="Left" VerticalAlignment="Center">
                     <DockPanel.Background >
                         <ImageBrush ImageSource="/Images/calendar_grid.jpg" Stretch="UniformToFill" />
                     </DockPanel.Background>
-                    <!--<Paragraph FontSize="36">Hello, world!</Paragraph>
-                    <Paragraph FontStyle="Italic" TextAlignment="Left" FontSize="14" Foreground="Gray">The ultimate programming greeting!</Paragraph>-->
                 </DockPanel>
             </ScrollViewer>
         </DockPanel>
     </Canvas>
-    <!--<Grid Name="plnMainGrid" MouseUp="plnMainGrid_MouseUp" Background="#FF647964" >
 
-
-    </Grid>-->
 </Window>
