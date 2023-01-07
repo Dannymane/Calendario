@@ -9,8 +9,8 @@
 
     <Canvas  Name="plnMainGrid" Background="#FF3C443C">
         <Calendar x:Name="Calendar" Canvas.Left="30" Canvas.Top="40" />
-        <!--<Button x:Name="AddEventButton" Canvas.Left="60" Canvas.Top="250" Content="Add Event"
-                Click="AddEventButton_Click" />-->
+        <Button x:Name="AddEventButton" Canvas.Left="60" Canvas.Top="250" Content="Add Event"
+                Click="AddEventButton_Click" />
         <DockPanel Canvas.Left="240" Canvas.Top="40" Height="663" MaxWidth="910" Panel.ZIndex="5" HorizontalAlignment="Left" VerticalAlignment="Center">
             <!--<StackPanel DockPanel.Dock="Left">
                 <Button Content="Button 1"/>
@@ -42,11 +42,11 @@
             </Canvas>
 
             <ScrollViewer>
-                <DockPanel x:Name="EventsDataDockPanel"  Height="794" Width="880" HorizontalAlignment="Left" VerticalAlignment="Center">
-                    <DockPanel.Background >
+                <Canvas x:Name="EventsCanvasPanel"  Height="794" Width="880" HorizontalAlignment="Left" VerticalAlignment="Center">
+                    <Canvas.Background >
                         <ImageBrush ImageSource="/Images/calendar_grid.jpg" Stretch="UniformToFill" />
-                    </DockPanel.Background>
-                </DockPanel>
+                    </Canvas.Background>
+                </Canvas>
             </ScrollViewer>
         </DockPanel>
     </Canvas>
