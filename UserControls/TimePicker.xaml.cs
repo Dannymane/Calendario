@@ -20,6 +20,10 @@ namespace Calendario.UserControls
     /// </summary>
     public partial class TimePicker : UserControl
     {
+        //Standart .NET property:
+        //public TimeSpan Time { get; set; }
+
+        //Dependency property supported by WPF:
         public static readonly DependencyProperty TimeProperty =
             DependencyProperty.Register("Time", typeof(TimeSpan), typeof(TimePicker),
                 new PropertyMetadata(TimeSpan.Zero));
@@ -28,10 +32,11 @@ namespace Calendario.UserControls
             get { return (TimeSpan)GetValue(TimeProperty); }
             set { SetValue(TimeProperty, value); }
         }
+
         public TimePicker()
         {
             InitializeComponent();
-            UpdateTimeText();
+            //UpdateTimeText();
         }
         private void UpdateTimeText()
         {
