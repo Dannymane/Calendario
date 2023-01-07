@@ -26,7 +26,7 @@ namespace Calendario.Dialogs
         {
             InitializeComponent();
             Event = new Event();
-
+             
         }
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
