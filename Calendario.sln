@@ -3,9 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calendario", "Calendario.csproj", "{662E8E27-639C-4636-B781-B9FCD407EB53}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test", "..\test\test.csproj", "{38937803-C00D-4D77-862E-9CCA0CA7600B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calendario", "Calendario.csproj", "{662E8E27-639C-4636-B781-B9FCD407EB53}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +15,6 @@ Global
 		{662E8E27-639C-4636-B781-B9FCD407EB53}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{662E8E27-639C-4636-B781-B9FCD407EB53}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{662E8E27-639C-4636-B781-B9FCD407EB53}.Release|Any CPU.Build.0 = Release|Any CPU
-		{38937803-C00D-4D77-862E-9CCA0CA7600B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{38937803-C00D-4D77-862E-9CCA0CA7600B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{38937803-C00D-4D77-862E-9CCA0CA7600B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{38937803-C00D-4D77-862E-9CCA0CA7600B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

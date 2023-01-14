@@ -6,16 +6,16 @@
         xmlns:local="clr-namespace:Calendario"
         mc:Ignorable="d"
         Title="MainWindow" Height="720" MinHeight="300" MinWidth="1150">
-
-    <Grid  Name="plnMainGrid" Background="#FF3C443C">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="5*"/>
-        </Grid.ColumnDefinitions>
-        <Calendar x:Name="Calendar" Grid.Column="0" Margin="30,40,0,0" />
-        <Button x:Name="AddEventButton" Grid.Column="0" Margin="30,340,60,320"  Content="Add Event"
-                Click="AddEventButton_Click" />
-        <DockPanel Width="880" Margin="30,40,5,5"  Grid.Column="1"  Panel.ZIndex="5"  >
+    <Canvas  Name="plnMainGrid" MouseUp="plnMainGrid_MouseUp" Background="#FF3C443C">
+        <DockPanel Canvas.Left="240" Canvas.Top="40" Height="663" MaxWidth="910" Panel.ZIndex="5" HorizontalAlignment="Left" VerticalAlignment="Center">
+            <!--<StackPanel DockPanel.Dock="Left">
+                <Button Content="Button 1"/>
+                <Button Content="Button 2"/>
+                <Button Content="Button 3"/>
+                <Button Content="Button 4"/>
+                <Button Content="Button 5"/>
+                <Button Content="Button 6"/>
+            </StackPanel>-->
             <Canvas DockPanel.Dock="Top" Background="#FF586C58" Height="50">
                 <StackPanel Orientation="Horizontal" Canvas.Left="90"  Canvas.Top="0">
                     <Label Content="SUN" Width="120" />
@@ -27,24 +27,29 @@
                     <Label Content="SAT" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Canvas.Top="20"  Canvas.Left="95">
-                    <TextBlock  Text="{Binding Sunday, StringFormat={}{0: dd}}"  Width="122"/>
-                    <TextBlock Text="{Binding Monday, StringFormat={}{0: dd}}"  Width="117"/>
-                    <TextBlock Text="{Binding Tuesday, StringFormat={}{0: dd}}" Width="120"/>
-                    <TextBlock Text="{Binding Wednesday, StringFormat={}{0: dd}}" Width="120"/>
-                    <TextBlock Text="{Binding Thursday, StringFormat={}{0: dd}}" Width="118"/>
-                    <TextBlock Text="{Binding Friday, StringFormat={}{0: dd}}" Width="120"/>
-                    <TextBlock Text="{Binding Saturday, StringFormat={}{0: dd}}" />
+                    <Label Content="10"  Width="122"/>
+                    <Label Content="20"  Width="117"/>
+                    <Label Content="30" Width="120"/>
+                    <Label Content="40" Width="120"/>
+                    <Label Content="50" Width="118"/>
+                    <Label Content="60" Width="120"/>
+                    <Label Content="60" />
                 </StackPanel>
             </Canvas>
 
             <ScrollViewer>
-                <Canvas x:Name="EventsCanvasPanel" Height="794" Width="880" >
-                    <Canvas.Background >
+                <DockPanel Height="794" Width="880" HorizontalAlignment="Left" VerticalAlignment="Center">
+                    <DockPanel.Background >
                         <ImageBrush ImageSource="/Images/calendar_grid.jpg" Stretch="UniformToFill" />
-                    </Canvas.Background>
-                </Canvas>
+                    </DockPanel.Background>
+                    <!--<Paragraph FontSize="36">Hello, world!</Paragraph>
+                    <Paragraph FontStyle="Italic" TextAlignment="Left" FontSize="14" Foreground="Gray">The ultimate programming greeting!</Paragraph>-->
+                </DockPanel>
             </ScrollViewer>
         </DockPanel>
-    </Grid>
+    </Canvas>
+    <!--<Grid Name="plnMainGrid" MouseUp="plnMainGrid_MouseUp" Background="#FF647964" >
 
+
+    </Grid>-->
 </Window>
