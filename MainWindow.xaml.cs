@@ -182,37 +182,37 @@ namespace Calendario
                 {
                     case DayOfWeek.Sunday:
                         {
-                            Canvas.SetLeft(eventCard, 53 + 118*6);
+                            Canvas.SetLeft(eventCard, 53);
                             break;
                         }
                     case DayOfWeek.Monday:
                         {
-                            Canvas.SetLeft(eventCard, 53);
+                            Canvas.SetLeft(eventCard, 53 + 118);
                             break;
                         }
                     case DayOfWeek.Tuesday:
                         {
-                            Canvas.SetLeft(eventCard, 53 + 118 );
+                            Canvas.SetLeft(eventCard, 53 + 118 *2);
                             break;
                         }
                     case DayOfWeek.Wednesday:
                         {
-                            Canvas.SetLeft(eventCard, 53 + 118 *2);
+                            Canvas.SetLeft(eventCard, 53 + 118 *3);
                             break;
                         }
                     case DayOfWeek.Thursday:
                         {
-                            Canvas.SetLeft(eventCard, 53 + 118 *3);
+                            Canvas.SetLeft(eventCard, 53 + 118 *4);
                             break;
                         }
                     case DayOfWeek.Friday:
                         {
-                            Canvas.SetLeft(eventCard, 53 + 118 *4);
+                            Canvas.SetLeft(eventCard, 53 + 118 *5);
                             break;
                         }
                     case DayOfWeek.Saturday:
                         {
-                            Canvas.SetLeft(eventCard, 53 + 118 *5);
+                            Canvas.SetLeft(eventCard, 53 + 118 *6);
                             break;
                         }
                 }
