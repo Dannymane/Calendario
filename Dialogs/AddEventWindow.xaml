@@ -27,7 +27,7 @@
         <TextBlock Grid.Row="2" Grid.Column="0" Text="Start Time:" />
         <uc:TimePicker x:Name="StartTimePicker" Grid.Row="2" Grid.Column="1" />
         
-        <TextBlock Grid.Row="3" Grid.Column="0" Text="Start Time:" />
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="End Time:" />
         <uc:TimePicker x:Name="EndTimePicker" Grid.Row="3" Grid.Column="1" />
 
         <TextBlock Grid.Row="4" Grid.Column="0" Text="Location:" />
