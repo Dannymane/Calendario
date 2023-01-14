@@ -39,13 +39,13 @@
                     <Label Content="SAT" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Canvas.Top="20"  Canvas.Left="95">
-                    <Label Content="10"  Width="122"/>
-                    <Label Content="20"  Width="117"/>
-                    <Label Content="30" Width="120"/>
-                    <Label Content="40" Width="120"/>
-                    <Label Content="50" Width="118"/>
-                    <Label Content="60" Width="120"/>
-                    <Label Content="60" />
+                    <TextBlock  Text="{Binding Sunday, StringFormat={}{0: dd}}"  Width="122"/>
+                    <TextBlock Text="{Binding Monday, StringFormat={}{0: dd}}"  Width="117"/>
+                    <TextBlock Text="{Binding Tuesday, StringFormat={}{0: dd}}" Width="120"/>
+                    <TextBlock Text="{Binding Wednesday, StringFormat={}{0: dd}}" Width="120"/>
+                    <TextBlock Text="{Binding Thursday, StringFormat={}{0: dd}}" Width="118"/>
+                    <TextBlock Text="{Binding Friday, StringFormat={}{0: dd}}" Width="120"/>
+                    <TextBlock Text="{Binding Saturday, StringFormat={}{0: dd}}" />
                 </StackPanel>
             </Canvas>
 
