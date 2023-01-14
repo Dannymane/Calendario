@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:Calendario.UserControls"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <WrapPanel Orientation="Vertical" Width="109" Height="100" Background="LightBlue">
+    <WrapPanel Orientation="Vertical" Width="113" Height="{Binding CartHeight}" Background="LightBlue">
         <TextBlock Text="{Binding Title}" FontWeight="Bold" Height="auto" Width="115" TextWrapping="Wrap"/>
         <TextBlock Text="{Binding StartTime}" Height="auto" TextWrapping="Wrap"/>
         <TextBlock Text="{Binding EndTime}" Height="auto" TextWrapping="Wrap"/>
@@ -15,7 +15,3 @@
     </WrapPanel>
     
 </UserControl>
-
-<!--<Rectangle Grid.Row="1" Fill="LightGray"
-                   Height="1"
-                   Margin="0,5,0,5" VerticalAlignment="Bottom" />-->

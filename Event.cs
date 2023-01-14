@@ -14,5 +14,10 @@ namespace Calendario.Images
         public string Title { get; set; }
         public string Description { get; set; }
         public string Location { get; set; }
+        public int CartHeight
+        {//(int) and Round becouse '(int)' rounds always to smallest number (31.8 -> 31)
+            get { return (int)Math.Round((EndTime - StartTime).TotalSeconds/112.5) ; }
+        }
+
     }
 }
