@@ -1,0 +1,12 @@
+﻿<UserControl x:Class="Calendario.UserControls.TimePicker"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d">
+    <StackPanel Orientation="Horizontal">
+        <TextBox x:Name="HourTextBox" Width="30" Margin="5" TextChanged="HourTextBox_TextChanged" />
+        <TextBlock Text=":" Margin="5" />
+        <TextBox x:Name="MinuteTextBox" Width="30" Margin="5" TextChanged="MinuteTextBox_TextChanged" />
+    </StackPanel>
+</UserControl>
