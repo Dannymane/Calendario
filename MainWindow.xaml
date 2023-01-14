@@ -12,22 +12,10 @@
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="5*"/>
         </Grid.ColumnDefinitions>
-        <!--<Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>-->
         <Calendar x:Name="Calendar" Grid.Column="0" Margin="30,40,0,0" />
         <Button x:Name="AddEventButton" Grid.Column="0" Margin="30,340,60,320"  Content="Add Event"
                 Click="AddEventButton_Click" />
         <DockPanel Width="880" Margin="30,40,5,5"  Grid.Column="1"  Panel.ZIndex="5"  >
-            <!--<StackPanel DockPanel.Dock="Left">
-                <Button Content="Button 1"/>
-                <Button Content="Button 2"/>
-                <Button Content="Button 3"/>
-                <Button Content="Button 4"/>
-                <Button Content="Button 5"/>
-                <Button Content="Button 6"/>
-            </StackPanel>-->
             <Canvas DockPanel.Dock="Top" Background="#FF586C58" Height="50">
                 <StackPanel Orientation="Horizontal" Canvas.Left="90"  Canvas.Top="0">
                     <Label Content="SUN" Width="120" />
