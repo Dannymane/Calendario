@@ -139,7 +139,7 @@ namespace Calendario
     {
         //private Calendar calendar;
         public ObservableCollection<Event> Events { get; set; }
-        public ObservableCollection<Event> ChosenWeekEvents { get; set; }
+        //public ObservableCollection<Event> ChosenWeekEvents { get; set; }
         public MainViewModel ViewModel;
 
 
@@ -147,7 +147,7 @@ namespace Calendario
         {
             InitializeComponent();
             Events = new ObservableCollection<Event>();
-            ChosenWeekEvents = new ObservableCollection<Event>();
+            //ChosenWeekEvents = new ObservableCollection<Event>();
 
 
             Calendar.SelectedDate = DateTime.Today;
@@ -166,10 +166,9 @@ namespace Calendario
         private void Calendar_SelectedDatesChanged(object sender, SelectionChangedEventArgs e)
         {
             // Clear the events list
-            //EventsCanvasPanel.Children.Clear();
-            ChosenWeekEvents.Clear();
+            EventsCanvasPanel.Children.Clear();
+
             // Get the selected week
-            //Calendar calendar = sender as Calendar;
             ViewModel.SelectedDate = Calendar.SelectedDates[0];
 
             // Add the events for the selected week to the list
@@ -178,18 +177,47 @@ namespace Calendario
                 if (ev.Day >= ViewModel.Sunday && ev.Day < ViewModel.Sunday.AddDays(7))
                 {
                     var eventCard = new EventControlCard(ev);
+
+                switch (ev.Day.DayOfWeek)
+                {
+                    case DayOfWeek.Sunday:
+                        {
+                            Canvas.SetLeft(eventCard, 53 + 118*6);
+                            break;
+                        }
+                    case DayOfWeek.Monday:
+                        {
+                            Canvas.SetLeft(eventCard, 53);
+                            break;
+                        }
+                    case DayOfWeek.Tuesday:
+                        {
+                            Canvas.SetLeft(eventCard, 53 + 118 );
+                            break;
+                        }
+                    case DayOfWeek.Wednesday:
+                        {
+                            Canvas.SetLeft(eventCard, 53 + 118 *2);
+                            break;
+                        }
+                    case DayOfWeek.Thursday:
+                        {
+                            Canvas.SetLeft(eventCard, 53 + 118 *3);
+                            break;
+                        }
+                    case DayOfWeek.Friday:
+                        {
+                            Canvas.SetLeft(eventCard, 53 + 118 *4);
+                            break;
+                        }
+                    case DayOfWeek.Saturday:
+                        {
+                            Canvas.SetLeft(eventCard, 53 + 118 *5);
+                            break;
+                        }
+                }
+                    Canvas.SetTop(eventCard, 29 + (int)Math.Round((ev.StartTime).TotalSeconds / 114.5));
                     EventsCanvasPanel.Children.Add(eventCard);
-                    Canvas.SetTop(eventCard, 100);
-                    Canvas.SetLeft(eventCard, 55);
-
-                    //ev.X = 400;
-                    //ev.Y = 400;
-                    //ChosenWeekEvents.Add(ev);
-
-                    //EventWindow window = new EventWindow(ev);
-                    //EventsCanvasPanel.Children.Add(window);
-                    //Canvas.SetTop(window, 100);
-                    //Canvas.SetLeft(window, 100);
                 }
             }
         }
@@ -206,14 +234,9 @@ namespace Calendario
                 Event ev = addEventWindow.Event;
                 Events.Add(ev);
 
-             }
-            // If the event is in the currently selected week, add it to the list
-            //DateTime sunday = calendar.SelectedDates [0];
-            // DateTime endOfWeek = sunday.AddDays(7);
-            // if (event.StartTime >= sunday && event.EndTime < endOfWeek)
-            // {
-            //     EventsDataGrid.Items.Add(event);
-            // }
+            }
+            //Refreshing the schedule plane
+            Calendar_SelectedDatesChanged(Calendar, null);
         }
     }
 }
