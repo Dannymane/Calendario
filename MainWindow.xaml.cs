@@ -123,23 +123,16 @@ namespace Calendario
         {
             SelectedDate = SelectedDate_;
         }
-        // PropertyChanged event implementation
         protected void RaisePropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-        private void NotifyPropertyChanged()
-        {
-            throw new NotImplementedException();
-        }
-        //INotifyPropertyChanged members and function
+
     }
 
     public partial class MainWindow : Window
     {
-        //private Calendar calendar;
         public ObservableCollection<Event> Events { get; set; }
-        //public ObservableCollection<Event> ChosenWeekEvents { get; set; }
         public MainViewModel ViewModel;
 
 
@@ -147,7 +140,6 @@ namespace Calendario
         {
             InitializeComponent();
             Events = new ObservableCollection<Event>();
-            //ChosenWeekEvents = new ObservableCollection<Event>();
 
 
             Calendar.SelectedDate = DateTime.Today;
@@ -155,7 +147,6 @@ namespace Calendario
             this.DataContext = ViewModel;
 
             Calendar.SelectedDatesChanged += Calendar_SelectedDatesChanged;
-            //ChosenWeekEvents.CollectionChanged += 
 
 
             //Binding binding = new Binding("Text");
