@@ -400,10 +400,10 @@
             <Border.Effect>
                 <DropShadowEffect Opacity="0.4" ShadowDepth="9" BlurRadius="10"/>
             </Border.Effect>
-            <Calendar Style="{DynamicResource CalendarStyle1}" x:Name="Calendar" Grid.Column="0" Margin="0,81,0,-81" Grid.ColumnSpan="2" Background="#FF2C6763" />
+            <Calendar Style="{DynamicResource CalendarStyle1}" x:Name="Calendar" Grid.Column="0" Margin="0,81,0,-81" Grid.ColumnSpan="2" Background="#FF2C6763" FontFamily="Thames" FontSize="16" FontWeight="UltraBold" Foreground="#FF3A3A3A" />
         </Border>
         <Button Style="{DynamicResource ButtonStyle1}" x:Name="AddEventButton"  Grid.Column="0" Margin="52,280,53,391"  Content="Add Event"
-                Click="AddEventButton_Click" BorderBrush="{x:Null}" Background="#FF2C6763" />
+                Click="AddEventButton_Click" BorderBrush="{x:Null}" Background="#FF2C6763" Foreground="#FF073733" FontSize="14" FontWeight="DemiBold" FontFamily="Thames" />
         <DockPanel Margin="67,-1,0,0"  Grid.Column="1"  Panel.ZIndex="5"  >
             <Canvas DockPanel.Dock="Top" Height="50" Width="1004" Margin="0,1,0,0">
                 <Border BorderThickness="0" Height="50" Width="966" CornerRadius="0,38,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#FF325442">
@@ -411,22 +411,22 @@
                         <DropShadowEffect Opacity="0.4" ShadowDepth="9" BlurRadius="10"/>
                     </Border.Effect>
                 </Border>
-                <StackPanel Orientation="Horizontal" Canvas.Left="110"  Canvas.Top="0">
-                    <Label Content="SUN" Width="122" FontFamily="Verdana" FontSize="13" />
-                    <Label Content="MON" Width="129" FontFamily="Verdana" FontSize="13"/>
-                    <Label Content="TUE" Width="126" FontFamily="Verdana" FontSize="13"/>
-                    <Label Content="WED" Width="127" FontFamily="Verdana" FontSize="13"/>
-                    <Label Content="THU" Width="131" FontFamily="Verdana" FontSize="13"/>
-                    <Label Content="FRI" Width="122" FontFamily="Verdana" FontSize="13"/>
+                <StackPanel Orientation="Horizontal" Canvas.Left="110"  Canvas.Top="0" Margin="0,4,0,0">
+                    <Label Content="SUN" Width="122" FontFamily="Thames" FontSize="13" />
+                    <Label Content="MON" Width="129" FontFamily="Thames" FontSize="13"/>
+                    <Label Content="TUE" Width="126" FontFamily="Thames" FontSize="13"/>
+                    <Label Content="WED" Width="127" FontFamily="Thames" FontSize="13"/>
+                    <Label Content="THU" Width="131" FontFamily="Thames" FontSize="13"/>
+                    <Label Content="FRI" Width="122" FontFamily="Thames" FontSize="13"/>
                     <Label Content="SAT" RenderTransformOrigin="2.457,0.656" Width="35" FontFamily="Verdana" FontSize="13"/>
                 </StackPanel>
-                <StackPanel Orientation="Horizontal" Canvas.Top="20"  Canvas.Left="118">
-                    <TextBlock  Text="{Binding Sunday, StringFormat={}{0: dd}}"  Width="123" FontFamily="Verdana"/>
-                    <TextBlock Text="{Binding Monday, StringFormat={}{0: dd}}"  Width="127" FontFamily="Verdana"/>
-                    <TextBlock Text="{Binding Tuesday, StringFormat={}{0: dd}}" Width="128" FontFamily="Verdana"/>
-                    <TextBlock Text="{Binding Wednesday, StringFormat={}{0: dd}}" Width="126" FontFamily="Verdana"/>
-                    <TextBlock Text="{Binding Thursday, StringFormat={}{0: dd}}" Width="128" FontFamily="Verdana"/>
-                    <TextBlock Text="{Binding Friday, StringFormat={}{0: dd}}" Width="125" FontFamily="Verdana"/>
+                <StackPanel Orientation="Horizontal" Canvas.Top="20"  Canvas.Left="118" Margin="0,4,0,0">
+                    <TextBlock  Text="{Binding Sunday, StringFormat={}{0: dd}}"  Width="123" FontFamily="Thames"/>
+                    <TextBlock Text="{Binding Monday, StringFormat={}{0: dd}}"  Width="127" FontFamily="Thames"/>
+                    <TextBlock Text="{Binding Tuesday, StringFormat={}{0: dd}}" Width="128" FontFamily="Thames"/>
+                    <TextBlock Text="{Binding Wednesday, StringFormat={}{0: dd}}" Width="126" FontFamily="Thames"/>
+                    <TextBlock Text="{Binding Thursday, StringFormat={}{0: dd}}" Width="128" FontFamily="Thames"/>
+                    <TextBlock Text="{Binding Friday, StringFormat={}{0: dd}}" Width="125" FontFamily="Thames"/>
                     <TextBlock Text="{Binding Saturday, StringFormat={}{0: dd}}" />
                 </StackPanel>
             </Canvas>
