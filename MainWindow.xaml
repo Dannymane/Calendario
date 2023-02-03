@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Calendario"
         mc:Ignorable="d"
-        Title="MainWindow" Height="720" Width="1240" ResizeMode="NoResize">
+        WindowStyle="None"
+        Title="MainWindow" Height="720" Width="1240" ResizeMode="NoResize" AllowsTransparency="True" Background="{x:Null}">
     <Window.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
@@ -71,7 +72,7 @@
                     <TextBlock Foreground="#FF333333" FontFamily="Verdana" FontWeight="Bold" FontSize="9.5" HorizontalAlignment="Center" Margin="0,6,0,6" Text="{Binding}" VerticalAlignment="Center"/>
                 </DataTemplate>
             </ControlTemplate.Resources>
-            <Grid x:Name="PART_Root" Background="#FF211F1F">
+            <Grid x:Name="PART_Root" Background="{x:Null}">
                 <Grid.Resources>
                     <SolidColorBrush x:Key="DisabledColor" Color="#A5FFFFFF"/>
                 </Grid.Resources>
@@ -389,25 +390,22 @@
         </Style>
     </Window.Resources>
 
-    <Grid  Name="plnMainGrid" Background="#FF475447" Margin="0,0,0,1">
+    <Grid  Name="plnMainGrid" Margin="0,0,0,1">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="5*"/>
         </Grid.ColumnDefinitions>
-        <Calendar Style="{DynamicResource CalendarStyle1}" x:Name="Calendar" Grid.Column="0" Margin="0,96,932,408" Grid.ColumnSpan="2" >
-            <Calendar.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FFE4EAF0"/>
-                    <GradientStop Color="#FFECF0F4" Offset="0.16"/>
-                    <GradientStop Color="#FFFCFCFD" Offset="0.16"/>
-                    <GradientStop Color="#FF78D64F" Offset="1"/>
-                </LinearGradientBrush>
-            </Calendar.Background>
-        </Calendar>
-        <Button Style="{DynamicResource ButtonStyle1}" x:Name="AddEventButton"  Grid.Column="0" Margin="30,340,75,332"  Content="Add Event"
+        <Border Grid.ColumnSpan="2" CornerRadius="38" Background="#FF596C58"/>
+        <Border Grid.ColumnSpan="2" CornerRadius="38,0,0,38" Background="#FF325442" Margin="0,0,966,0">
+            <Border.Effect>
+                <DropShadowEffect Opacity="0.4" ShadowDepth="9" BlurRadius="10"/>
+            </Border.Effect>
+            <Calendar Style="{DynamicResource CalendarStyle1}" x:Name="Calendar" Grid.Column="0" Margin="0,99,0,-99" Grid.ColumnSpan="2" Background="#FF2C6763" />
+        </Border>
+        <Button Style="{DynamicResource ButtonStyle1}" x:Name="AddEventButton"  Grid.Column="0" Margin="52,296,53,375"  Content="Add Event"
                 Click="AddEventButton_Click" BorderBrush="{x:Null}" Background="#FF8FBF7A" />
         <DockPanel Margin="72,0,0,5"  Grid.Column="1"  Panel.ZIndex="5"  >
-            <Canvas DockPanel.Dock="Top" Background="#FF587558" Height="50" Width="955">
+            <Canvas DockPanel.Dock="Top" Background="#FF596C58" Height="50" Width="955">
                 <StackPanel Orientation="Horizontal" Canvas.Left="90"  Canvas.Top="0">
                     <Label Content="SUN" Width="120" />
                     <Label Content="MON" Width="129"/>
@@ -428,7 +426,7 @@
                 </StackPanel>
             </Canvas>
 
-            <ScrollViewer Style="{DynamicResource ScrollViewerStyle1}" Width="954">
+            <ScrollViewer Style="{DynamicResource ScrollViewerStyle1}" Width="954" Height="630">
                 <Canvas x:Name="EventsCanvasPanel" Height="812" Width="944" >
                     <Canvas.Background >
                         <ImageBrush ImageSource="/Images/calendar_grid.jpg" Stretch="UniformToFill" />
