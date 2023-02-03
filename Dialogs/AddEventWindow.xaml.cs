@@ -1,6 +1,7 @@
 ﻿using Calendario.Images;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,9 +10,11 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Markup;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Vasko_Project;
 
 namespace Calendario.Dialogs
 {
@@ -20,6 +23,7 @@ namespace Calendario.Dialogs
     /// </summary>
     public partial class AddEventWindow : Window
     {
+        SqlClass obj = new SqlClass();
         public Event Event { get; set; }
 
         public AddEventWindow()
@@ -61,6 +65,22 @@ namespace Calendario.Dialogs
             Event.Location = LocationTextBox.Text;
             Event.Description = DescriptionTextBox.Text;
 
+            using (SqlConnection connection = new SqlConnection(obj.connectionString))
+            {
+                connection.Open();
+
+                SqlCommand command = new SqlCommand("INSERT INTO Events (Title, Day, StartTime, EndTime, Location, Description) VALUES (@title, @day, @startTime, @endTime, @location, @description)", connection);
+                
+                command.Parameters.AddWithValue("@title", Event.Title);
+                command.Parameters.AddWithValue("@day", Event.Day);
+                command.Parameters.AddWithValue("@startTime", Event.StartTime);
+                command.Parameters.AddWithValue("@endTime", Event.EndTime);
+                command.Parameters.AddWithValue("@location", Event.Location);
+                command.Parameters.AddWithValue("@description", Event.Description);
+                command.ExecuteNonQuery();
+                
+
+            }
 
             // Close the dialog
             DialogResult = true;

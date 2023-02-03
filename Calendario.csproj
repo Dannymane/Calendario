@@ -19,4 +19,10 @@
     <Folder Include="Dialogs\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="EntityFramework" Version="6.4.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.2" />
+    <PackageReference Include="SD.LLBLGen.Pro.ORMSupportClasses" Version="5.9.3" />
+  </ItemGroup>
+
 </Project>

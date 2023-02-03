@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.ComponentModel;
+using System.Data.SqlClient;
 using System.Globalization;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -22,6 +23,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Xml.Linq;
+using Vasko_Project;
 
 namespace Calendario
 {
@@ -142,13 +144,35 @@ namespace Calendario
         //public ObservableCollection<Event> ChosenWeekEvents { get; set; }
         public MainViewModel ViewModel;
 
-
+        SqlClass obj = new SqlClass();
         public MainWindow()
         {
             InitializeComponent();
             Events = new ObservableCollection<Event>();
-            //ChosenWeekEvents = new ObservableCollection<Event>();
+            //ChosenWeekEvents = new ObservableCollection<Event>()
 
+            using (SqlConnection connection = new SqlConnection(obj.connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand("SELECT * FROM Events", connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Event ev = new Event();
+                            ev.Title = reader["Title"].ToString();
+                            ev.Day = (DateTime)reader["Day"];
+                            ev.StartTime = (TimeSpan)reader["StartTime"];
+                            ev.EndTime = (TimeSpan)reader["EndTime"];
+                            ev.Location = reader["Location"].ToString();
+                            ev.Description = reader["Description"].ToString();
+
+                            Events.Add(ev);
+                        }
+                    }
+                }
+            }
 
             Calendar.SelectedDate = DateTime.Today;
             ViewModel = new MainViewModel(Calendar.SelectedDates[0]);
@@ -182,37 +206,37 @@ namespace Calendario
                 {
                     case DayOfWeek.Sunday:
                         {
-                            Canvas.SetLeft(eventCard, 53);
+                            Canvas.SetLeft(eventCard, 57);
                             break;
                         }
                     case DayOfWeek.Monday:
                         {
-                            Canvas.SetLeft(eventCard, 53 + 118);
+                            Canvas.SetLeft(eventCard, 57 + 125);
                             break;
                         }
                     case DayOfWeek.Tuesday:
                         {
-                            Canvas.SetLeft(eventCard, 53 + 118 *2);
+                            Canvas.SetLeft(eventCard, 57 + 125 *2);
                             break;
                         }
                     case DayOfWeek.Wednesday:
                         {
-                            Canvas.SetLeft(eventCard, 53 + 118 *3);
+                            Canvas.SetLeft(eventCard, 57 + 125 *3);
                             break;
                         }
                     case DayOfWeek.Thursday:
                         {
-                            Canvas.SetLeft(eventCard, 53 + 118 *4);
+                            Canvas.SetLeft(eventCard, 57 + 125 *4);
                             break;
                         }
                     case DayOfWeek.Friday:
                         {
-                            Canvas.SetLeft(eventCard, 53 + 118 *5);
+                            Canvas.SetLeft(eventCard, 57 + 125 *5);
                             break;
                         }
                     case DayOfWeek.Saturday:
                         {
-                            Canvas.SetLeft(eventCard, 53 + 118 *6);
+                            Canvas.SetLeft(eventCard, 57 + 125 *6);
                             break;
                         }
                 }
