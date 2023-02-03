@@ -400,34 +400,39 @@
             <Border.Effect>
                 <DropShadowEffect Opacity="0.4" ShadowDepth="9" BlurRadius="10"/>
             </Border.Effect>
-            <Calendar Style="{DynamicResource CalendarStyle1}" x:Name="Calendar" Grid.Column="0" Margin="0,99,0,-99" Grid.ColumnSpan="2" Background="#FF2C6763" />
+            <Calendar Style="{DynamicResource CalendarStyle1}" x:Name="Calendar" Grid.Column="0" Margin="0,81,0,-81" Grid.ColumnSpan="2" Background="#FF2C6763" />
         </Border>
-        <Button Style="{DynamicResource ButtonStyle1}" x:Name="AddEventButton"  Grid.Column="0" Margin="52,296,53,375"  Content="Add Event"
-                Click="AddEventButton_Click" BorderBrush="{x:Null}" Background="#FF8FBF7A" />
-        <DockPanel Margin="72,0,0,5"  Grid.Column="1"  Panel.ZIndex="5"  >
-            <Canvas DockPanel.Dock="Top" Background="#FF596C58" Height="50" Width="955">
-                <StackPanel Orientation="Horizontal" Canvas.Left="90"  Canvas.Top="0">
-                    <Label Content="SUN" Width="120" />
-                    <Label Content="MON" Width="129"/>
-                    <Label Content="TUE" Width="132"/>
-                    <Label Content="WED" Width="138"/>
-                    <Label Content="THU" Width="120"/>
-                    <Label Content="FRI" Width="127"/>
-                    <Label Content="SAT" RenderTransformOrigin="2.457,0.656" Width="31" />
+        <Button Style="{DynamicResource ButtonStyle1}" x:Name="AddEventButton"  Grid.Column="0" Margin="52,280,53,391"  Content="Add Event"
+                Click="AddEventButton_Click" BorderBrush="{x:Null}" Background="#FF2C6763" />
+        <DockPanel Margin="67,-1,0,0"  Grid.Column="1"  Panel.ZIndex="5"  >
+            <Canvas DockPanel.Dock="Top" Height="50" Width="1004" Margin="0,1,0,0">
+                <Border BorderThickness="0" Height="50" Width="966" CornerRadius="0,38,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#FF325442">
+                    <Border.Effect>
+                        <DropShadowEffect Opacity="0.4" ShadowDepth="9" BlurRadius="10"/>
+                    </Border.Effect>
+                </Border>
+                <StackPanel Orientation="Horizontal" Canvas.Left="110"  Canvas.Top="0">
+                    <Label Content="SUN" Width="122" FontFamily="Verdana" FontSize="13" />
+                    <Label Content="MON" Width="129" FontFamily="Verdana" FontSize="13"/>
+                    <Label Content="TUE" Width="126" FontFamily="Verdana" FontSize="13"/>
+                    <Label Content="WED" Width="127" FontFamily="Verdana" FontSize="13"/>
+                    <Label Content="THU" Width="131" FontFamily="Verdana" FontSize="13"/>
+                    <Label Content="FRI" Width="122" FontFamily="Verdana" FontSize="13"/>
+                    <Label Content="SAT" RenderTransformOrigin="2.457,0.656" Width="35" FontFamily="Verdana" FontSize="13"/>
                 </StackPanel>
-                <StackPanel Orientation="Horizontal" Canvas.Top="20"  Canvas.Left="95">
-                    <TextBlock  Text="{Binding Sunday, StringFormat={}{0: dd}}"  Width="128"/>
-                    <TextBlock Text="{Binding Monday, StringFormat={}{0: dd}}"  Width="128"/>
-                    <TextBlock Text="{Binding Tuesday, StringFormat={}{0: dd}}" Width="128"/>
-                    <TextBlock Text="{Binding Wednesday, StringFormat={}{0: dd}}" Width="128"/>
-                    <TextBlock Text="{Binding Thursday, StringFormat={}{0: dd}}" Width="128"/>
-                    <TextBlock Text="{Binding Friday, StringFormat={}{0: dd}}" Width="128"/>
+                <StackPanel Orientation="Horizontal" Canvas.Top="20"  Canvas.Left="118">
+                    <TextBlock  Text="{Binding Sunday, StringFormat={}{0: dd}}"  Width="123" FontFamily="Verdana"/>
+                    <TextBlock Text="{Binding Monday, StringFormat={}{0: dd}}"  Width="127" FontFamily="Verdana"/>
+                    <TextBlock Text="{Binding Tuesday, StringFormat={}{0: dd}}" Width="128" FontFamily="Verdana"/>
+                    <TextBlock Text="{Binding Wednesday, StringFormat={}{0: dd}}" Width="126" FontFamily="Verdana"/>
+                    <TextBlock Text="{Binding Thursday, StringFormat={}{0: dd}}" Width="128" FontFamily="Verdana"/>
+                    <TextBlock Text="{Binding Friday, StringFormat={}{0: dd}}" Width="125" FontFamily="Verdana"/>
                     <TextBlock Text="{Binding Saturday, StringFormat={}{0: dd}}" />
                 </StackPanel>
             </Canvas>
 
             <ScrollViewer Style="{DynamicResource ScrollViewerStyle1}" Width="954" Height="630">
-                <Canvas x:Name="EventsCanvasPanel" Height="812" Width="944" >
+                <Canvas x:Name="EventsCanvasPanel" Height="812" Width="944" Margin="5,0,0,0" >
                     <Canvas.Background >
                         <ImageBrush ImageSource="/Images/calendar_grid.jpg" Stretch="UniformToFill" />
                     </Canvas.Background>
